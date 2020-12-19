@@ -34,7 +34,7 @@ public class SmsReceiver extends BroadcastReceiver {
                     String sender = message.getOriginatingAddress();
 
                     for (Map.Entry<String, ?> entry : configs.entrySet()) {
-                        if (sender.equals(entry.getKey())) {
+                        //if (sender.equals(entry.getKey())) {
                             JSONObject messageData = new JSONObject();
                             try {
                                 messageData.put("from", sender);
@@ -50,7 +50,7 @@ public class SmsReceiver extends BroadcastReceiver {
                             WebhookCaller webhookCaller = new WebhookCaller();
                             webhookCaller.execute(params);
                             break;
-                        }
+                        //}
                     }
                 }
             }
